@@ -44,6 +44,7 @@ tidyData<-DT[,lapply(.SD,mean),by="Activity,Subject"]
 setnames(tidyData, gsub('-mean', 'Mean', names(tidyData)))
 setnames(tidyData, gsub('-std', 'Std', names(tidyData)))
 setnames(tidyData, gsub('[-()]', '', names(tidyData)))
+setnames(tidyData, gsub('BodyBody', 'Body', names(tidyData)))
 
 write.table(tidyData,file="tidyData.txt",row.names = FALSE)
 
